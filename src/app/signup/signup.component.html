@@ -1,0 +1,124 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="offset-md-2 col-md-8">
+      <div class="card shadow mb-5 bg-white rounded">
+        <div class="card-body">
+          <h3 class="text-center card-title color-seaGreen">SIGN UP</h3>
+          <form [formGroup]='signupForm' (ngSubmit)='submit(signupForm)'>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="email">Email
+                  <span class="text-danger">*</span>
+                </label>
+                <input type="text" [ngClass]="{
+                  'has-error':signupFormControls('email').touched 
+                  && signupFormControls('email').invalid
+                }" formControlName='email' class="form-control" id="email">
+                <div class='pl-2 error-label text-danger' *ngIf="signupFormControls('email').touched 
+                && signupFormControls('email').invalid">
+                  <div *ngIf="signupFormControls('email').errors.required">
+                    Email is required
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="department">Department
+                  <span class="text-danger">*</span>
+                </label>
+                <select class="form-control" formControlName="department" [ngClass]="{
+                  'has-error':signupFormControls('department').touched 
+                  && signupFormControls('department').invalid
+                }">
+                  <option *ngFor="let department of departments" [value]="department.value">{{department.label}}
+                  </option>
+                </select>
+                <div class='pl-2 error-label text-danger' *ngIf="signupFormControls('department').touched 
+                && signupFormControls('department').invalid">
+                  <div *ngIf="signupFormControls('department').errors.required">
+                    Department is required
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="password">Password
+                  <span class="text-danger">*</span>
+                </label>
+                <input type="password" [ngClass]="{
+                      'has-error':signupFormControls('password').touched 
+                      && signupFormControls('password').invalid
+                    }" formControlName='password' class="form-control" id="password">
+                <div class='pl-2 error-label text-danger' *ngIf="signupFormControls('password').touched 
+                    && signupFormControls('password').invalid">
+                  <div *ngIf="signupFormControls('password').errors.required">
+                    Password is required
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="year">Year
+                  <span class="text-danger">*</span>
+                </label>
+                <select class="form-control" formControlName="year" [ngClass]="{
+                  'has-error':signupFormControls('year').touched 
+                  && signupFormControls('year').invalid
+                }">
+                  <option *ngFor="let year of years" [value]="year.value">{{year.label}}</option>
+                </select>
+                <div class='pl-2 error-label text-danger' *ngIf="signupFormControls('year').touched 
+                    && signupFormControls('year').invalid">
+                  <div *ngIf="signupFormControls('year').errors.required">
+                    Year is required
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="confirmPassword">Confirm Password
+                  <span class="text-danger">*</span>
+                </label>
+                <input type="password" [ngClass]="{
+                            'has-error':signupFormControls('confirmPassword').touched 
+                            && signupFormControls('confirmPassword').invalid
+                          }" formControlName='confirmPassword' class="form-control" id="confirmPassword">
+                <div class='pl-2 error-label text-danger' *ngIf="signupFormControls('confirmPassword').touched 
+                          && signupFormControls('confirmPassword').invalid">
+                  <div *ngIf="signupFormControls('confirmPassword').errors.required">
+                    Confirm Password is required
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="ml-1 mt-2">Role
+                  <span class="text-danger">*</span>
+                </label>
+                <br>
+                <label class="ml-1">
+                  <input type="radio" formControlName='role' value='student'>&nbsp;&nbsp;Student
+                </label>
+                <label class="ml-3">
+                  <input type="radio" formControlName='role' value="staff">&nbsp;&nbsp;Staff
+                </label>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <button type="submit" class="btn-padding btn-width btn bg-seaGreen text-white">Sign up</button>
+              <button type="button" class="btn-padding btn-width ml-3 btn btn-danger"
+                (click)="onCancel(signupForm)">Cancel</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

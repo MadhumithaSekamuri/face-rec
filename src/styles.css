@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.bg-seaGreen {
+  background-color: #1abc9c;
+}
+
+.color-seaGreen {
+  color: #1abc9c;
+}
+
+.form-control {
+  border: 2px solid #bdc3c7;
+  padding: 5px 10px;
+  height: 40px;
+}
+
+.form-control:focus {
+  border-color: #1abc9c;
+  outline: 0;
+  box-shadow: none;
+}
+
+.has-error,
+.has-error:focus,
+.has-error:active {
+  color: #e74c3c;
+  border-color: #e74c3c;
+  box-shadow: none;
+}
+
+
+.error-label {
+  margin-top: 1%;
+  font-size: 14px;
+}
+
+label {
+  font-weight: 400;
+  color: #95A5A6;
+}
+
+.btn-padding {
+  padding: 10px;
+}
+
+.btn-width {
+  width: 100px;
+}
