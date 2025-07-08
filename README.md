@@ -149,9 +149,7 @@
 ## References
 
 1. [FaceNet: A Unified Embedding for Face Recognition](https://arxiv.org/abs/1503.03832)
-2. OpenCV documentation
-3. "Smart Attendance System using Face Recognition", Madhumitha et al., 2024
-4. Dlib + face\_recognition library
+2. Dlib + face\_recognition library
 
 ---
 
